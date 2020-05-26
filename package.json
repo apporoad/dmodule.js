@@ -1,0 +1,27 @@
+{
+  "name": "dmodule.js",
+  "version": "1.0.0",
+  "description": "dynamic module manage",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apporoad/dmodule.js.git"
+  },
+  "keywords": [
+    "dynamic",
+    "module"
+  ],
+  "author": "apporoad",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/apporoad/dmodule.js/issues"
+  },
+  "homepage": "https://github.com/apporoad/dmodule.js#readme",
+  "bin" : {
+    "dmoudle" : "bin.js",
+    "dmd" : "bin.js"
+  }
+}
