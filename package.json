@@ -20,8 +20,13 @@
     "url": "https://github.com/apporoad/dmodule.js/issues"
   },
   "homepage": "https://github.com/apporoad/dmodule.js#readme",
-  "bin" : {
-    "dmoudle" : "bin.js",
-    "dmd" : "bin.js"
+  "bin": {
+    "dmoudle": "bin.js",
+    "dmd": "bin.js"
+  },
+  "dependencies": {
+    "dson.js": "^1.0.3",
+    "hasha": "^5.2.0",
+    "lisa.sync": "^1.1.4"
   }
 }

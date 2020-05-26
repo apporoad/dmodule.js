@@ -146,3 +146,8 @@ D.require({
 
 
 
+
+### how to debug
+```bash
+curl  http://localhost:10000/  -X POST -F "file=@doc.md"
+```
