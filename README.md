@@ -68,6 +68,9 @@ vim run.js
 ```js
 var D = require('dmodule.js')('http://localhost:11546/')
 
+//采用版本
+D.use()
+
 D.load('demo').then(module=>{
     module.test()
 })
@@ -151,3 +154,7 @@ D.require({
 ```bash
 curl  http://localhost:10000/  -X POST -F "file=@doc.md"
 ```
+
+
+### ps
+1. 冲突提示，本地模块与远端模块冲突
