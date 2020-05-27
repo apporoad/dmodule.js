@@ -25,6 +25,7 @@
     "dmd": "bin.js"
   },
   "dependencies": {
+    "commnader": "0.0.1-security",
     "dson.js": "^1.0.3",
     "hasha": "^5.2.0",
     "lisa.sync": "^1.1.4"

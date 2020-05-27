@@ -69,7 +69,7 @@ module.exports = {
             uploadTime: new Date(),
             originFileName: file.name
         }
-        newMeta.file = newMeta.name + '-' + newMeta.version + '.zip'
+        newMeta.file = newMeta.name + '-' + newMeta.version + path.extname(file.name)
         var newMeta = Object.assign({}, params, newMeta)
         //here to save file
         const reader = fs.createReadStream(file.path);
