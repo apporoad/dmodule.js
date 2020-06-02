@@ -108,3 +108,5 @@ temp_modules/
 
 dmodules/
 temp_dmodules/
+
+dmodule.json
