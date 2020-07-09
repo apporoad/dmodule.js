@@ -69,7 +69,11 @@ module.exports = {
             uploadTime: new Date(),
             originFileName: file.name
         }
-        newMeta.file = newMeta.name + '-' + newMeta.version + path.extname(file.name)
+        //mkdir dmodules
+        if(!fs.existsSync(path.join(options.staticPath,'dmodules'))){
+            fs.mkdirSync(path.join(options.staticPath,'dmodules'))
+        }
+        newMeta.file =  'dmodules/'+ newMeta.name + '-' + newMeta.version + path.extname(file.name)
         var newMeta = Object.assign({}, params, newMeta)
         //here to save file
         const reader = fs.createReadStream(file.path);

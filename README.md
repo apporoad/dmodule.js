@@ -158,3 +158,9 @@ curl  http://localhost:10000/  -X POST -F "file=@doc.md"
 
 ### ps
 1. 冲突提示，本地模块与远端模块冲突
+
+
+
+## awesome features
+1. support index.html to add module by html GUI 
+2. support remote invoke by path :  [GET|POST|PUT|DELETE] /invoke/yourResourceName  in restful style
