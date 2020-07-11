@@ -1,92 +1,45 @@
-<link rel="stylesheet" href="css/codemirror.css" />
-<script src="js/codemirror.js"></script>
+<!DOCTYPE html>
+<html>
 
-<!--js-->
-<script src="js/javascript.js"></script>
-<link rel="stylesheet" href="css/darcula.css" />
-
-<!--折叠等等-->
-<link rel="stylesheet" href="css/foldgutter.css" />
-
-<script src="js/brace-fold.js"></script>
-<script src="js/comment-fold.js"></script>
-<script src="js/foldcode.js"></script>
-<script src="js/foldgutter.js"></script>
-
-<!--autocomplete-->
-<link rel="stylesheet" href="css/show-hint.css" />
-
-<script src="js/javascript-hint.js"></script>
-<script src="js/show-hint.js"></script>
+<head>
+  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/uikit.min.css" />
+  <script src="js/uikit.min.js"></script>
+  <script src="js/uikit-icons.min.js"></script>
+</head>
 
 <body>
-    <!-- begin code -->
-    <textarea class="form-control" id="code" name="code"></textarea>
-    <!-- end code-->
+  <div class="uk-child-width-1-2@s uk-child-width-1-3@m" uk-grid="masonry: true">
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 100px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 130px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 150px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 160px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 120px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 140px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 200px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 180px">Item</div>
+    </div>
+    <div>
+      <div class="uk-card uk-card-default uk-flex uk-flex-center uk-flex-middle" style="height: 140px">Item</div>
+    </div>
+  </div>
 </body>
 
-<script>
-    var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
-        mode: "text/javascript",
-        //extraKeys:{ "Tab":"getCompletions" },
-        lineNumbers: true,	//显示行号
-        theme: "darcula",	//设置主题
-        lineWrapping: true,	//代码折叠
-        foldGutter: true,
-        gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
-        matchBrackets: true,	//括号匹配
-        //readOnly: true,        //只读
-    });
-
-    editor.on('cursorActivity',function(e){
-        
-        //editor.showHint()
-    })
-    editor.on('keyup',function(instance,name,event){
-
-    })
-    editor.setSize('800px', '950px');     //设置代码框的长宽
-
-// editor.setValue("");    //给代码框赋值
-// editor.getValue();    //获取代码框的值
-
-// editor.setOption("readOnly", true);	//类似这种
-
-function getCompletions(token, context) {
-  var found = [], start = token.string;
-  alert('abc')
-  function maybeAdd(str) {
-    if (str.indexOf(start) == 0) found.push(str);
-  }
-  function gatherCompletions(obj) {
-    if (typeof obj == "string") forEach(stringProps, maybeAdd);
-    else if (obj instanceof Array) forEach(arrayProps, maybeAdd);
-    else if (obj instanceof Function) forEach(funcProps, maybeAdd);
-    for (var name in obj) maybeAdd(name);
-  }
-
-  if (context) {
-    // If this is a property, see if it belongs to some object we can
-    // find in the current environment.
-    var obj = context.pop(), base;
-    if (obj.className == "js-variable")
-      base = window[obj.string];
-    else if (obj.className == "js-string")
-      base = "";
-    else if (obj.className == "js-atom")
-      base = 1;
-    while (base != null && context.length)
-      base = base[context.pop().string];
-    if (base != null) gatherCompletions(base);
-  }
-  else {
-    // If not, just look in the window object and any local scope
-    // (reading into JS mode internals to get at the local variables)
-    for (var v = token.state.localVars; v; v = v.next) maybeAdd(v.name);
-    gatherCompletions(window);
-    forEach(keywords, maybeAdd);
-  }
-  return found;
-}
-
-</script>
+</html>
